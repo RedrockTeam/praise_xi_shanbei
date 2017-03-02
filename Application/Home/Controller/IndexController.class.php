@@ -34,7 +34,10 @@ class IndexController extends BaseController {
             $data = $questions->where(array('id' => $currentData['question_id']))->find();
             $this->ajaxReturn(array(
                 'status' => 200,
-                'data'   => $data
+                'data'   => array(
+                    'question' => $data,
+                    'current'  => $currentData['current']
+                )
             ));
         }
 
@@ -54,6 +57,7 @@ class IndexController extends BaseController {
         array_push($currentData['today_learn_id'], $question['id']);
         $currentData['today_learn_id'] = json_encode($currentData['today_learn_id']);
         $currentData['current'] += 1;
+        $current = $currentData['current'];
         if ($currentData['current'] == 5) {
             $currentData['current'] = 0;
             $currentData['today_group_count'] += 1;
@@ -71,7 +75,30 @@ class IndexController extends BaseController {
         $userCurrent->where(array('openid' => $openid))->save($currentData);
         $this->ajaxReturn(array(
             'status' => 200,
-            'data'   => $question
+            'data'   => array(
+                'question' => $data,
+                'current'  => $current
+            )
+        ));
+    }
+
+    public function rank() {
+        $users = M('users');
+        $openid = session('openid');
+        $user = $users->where(array('openid' => $openid))->find();
+        $map['score'] = array('GT', $user['score']);
+        $rank = $users->where($map)->count();
+        $rank += 1;
+        $list = $users->order('score desc')->field('nickname, score')->limit(10)->select();
+        $this->ajaxReturn(array(
+            'status' => 200,
+            'data'   => array(
+                'list' => $list,
+                'rank' => $rank,
+                'nickname' => $user['nickname'],
+                'days' => $user['days'],
+                'groups' => $user['count']
+            )
         ));
     }
 }
