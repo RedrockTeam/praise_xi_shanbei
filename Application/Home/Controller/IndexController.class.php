@@ -31,11 +31,11 @@ class IndexController extends BaseController {
 
         //返回退出时的题目
         if ($currentData['current'] != 0 && !$isNew) {
-            $data = $questions->where(array('id' => $currentData['question_id']))->find();
+            $question = $questions->where(array('id' => $currentData['question_id']))->find();
             $this->ajaxReturn(array(
                 'status' => 200,
                 'data'   => array(
-                    'question' => $data,
+                    'question' => $question,
                     'current'  => $currentData['current']
                 )
             ));
@@ -76,7 +76,7 @@ class IndexController extends BaseController {
         $this->ajaxReturn(array(
             'status' => 200,
             'data'   => array(
-                'question' => $data,
+                'question' => $question,
                 'current'  => $current
             )
         ));
