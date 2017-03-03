@@ -5,7 +5,36 @@ class BaseController extends Controller {
     public function _initialize(){
         $openid = session('openid');
         if (!$openid) {
-            session('openid', 'aaa'); //todo redirect oauth
+            $openid = I('get.openid');
+        }
+        if (!$openid) {
+            $uri = 'http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect='.urlencode('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            redirect($uri);
+        }
+        $nickname = urldecode(I('get.nickname'));
+        session('openid', $openid);
+        session('nickname', $nickname);
+        $users = M('users');
+        $num = $users->where(array('openid' => $openid))->count();
+        if ($num == 0) {
+            $data = array(
+                'openid' => $openid,
+                'nickname' => $nickname,
+                'days'   => 0,
+                'count'  => 0,
+                'imgurl' => urldecode(I('get.headimgurl')),
+                'score'  => 0
+            );
+            $users->add($data);
+            $userCurrent = M('user_current_question');
+            $currentData = array(
+                'openid' => $openid,
+                'current' => 0,
+                'today_group_count' => 0,
+                'today_learn_id' => json_encode(array()),
+                'date' => date('Y-m-d', time()),
+            );
+            $userCurrent->add($currentData);
         }
     }
 }

@@ -3,7 +3,8 @@ namespace Home\Controller;
 
 class IndexController extends BaseController {
     public function index(){
-        echo '123';
+        echo '等周老板了';
+        exit(0);
     }
 
     public function questions() {
