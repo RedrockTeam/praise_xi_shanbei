@@ -7,6 +7,8 @@ class IndexController extends BaseController {
     private $acess_token = 'gh_68f0a1ffc303';
     public function index(){
         $signature = $this->JSSDKSignature();
+        var_dump($signature);
+        return;
         $this->assign('signature', $signature);
         $this->assign('appid', $this->appid);
         $this->display();
@@ -113,7 +115,7 @@ class IndexController extends BaseController {
         $data['jsapi_ticket'] = $jsapi_ticket['data'];
         $data['noncestr'] = $string->randString();
         $data['timestamp'] = time();
-        $data['url'] = 'http://'.$_SERVER['HTTP_HOST'].__SELF__;//生成当前页面url
+        $data['url'] = 'https://'.$_SERVER['HTTP_HOST'].__SELF__;//生成当前页面url
         $data['signature'] = sha1($this->ToUrlParams($data));
         return $data;
     }
