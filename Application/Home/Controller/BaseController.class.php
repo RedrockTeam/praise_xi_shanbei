@@ -36,6 +36,12 @@ class BaseController extends Controller {
                 'date' => date('Y-m-d', time()),
             );
             $userCurrent->add($currentData);
+        } else {
+            $data = array(
+                'nickname' => $nickname,
+                'imgurl' => urldecode(I('get.headimgurl')),
+            );
+            $users->where(array('openid' => $openid))->save($data);
         }
     }
 }
