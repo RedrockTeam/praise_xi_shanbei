@@ -3,6 +3,12 @@ namespace Home\Controller;
 
 class IndexController extends BaseController {
     public function index(){
+        $q = M('questions');
+        $data = $q->where("id < 630")->select();
+        foreach ($data as &$v) {
+            $v['extra0'] = $v['from'];
+            $q->where(array('id' => $v['id']))->save($v);
+        }
         echo '等周老板了';
         exit(0);
     }
@@ -23,7 +29,7 @@ class IndexController extends BaseController {
         }
 
         //检查学习题目上限
-        if ($currentData['today_group_count'] == 3) {
+        if ($currentData['today_group_count'] == 3000) { //todo
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'  => '每天最多只能学三组题'
@@ -43,7 +49,7 @@ class IndexController extends BaseController {
         }
 
         //请求新题目时检查时间是否满足
-        if (time() - $currentData['time'] < 15 && $isNew) {
+        if (time() - $currentData['time'] < 1 && $isNew) { //todo
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'   => '学习时间未满'
