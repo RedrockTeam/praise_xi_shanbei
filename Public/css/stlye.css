@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: "Microsoft YaHei";
+  text-shadow: none !important;
+}
+#beginPage,
+#backPage,
+#gamePage,
+#overPage,
+#listPage {
+  position: relative;
+  background: url("/praise_xi_shanbei/Public/images/shadow.png") fixed bottom no-repeat #ffe28c;
+  background-size: 100%;
+}
+#beginPage .copyContainer,
+#backPage .copyContainer,
+#gamePage .copyContainer,
+#overPage .copyContainer,
+#listPage .copyContainer {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  top: 97%;
+}
+#beginPage .copyContainer .copyright,
+#backPage .copyContainer .copyright,
+#gamePage .copyContainer .copyright,
+#overPage .copyContainer .copyright,
+#listPage .copyContainer .copyright {
+  border-radius: 5px;
+  background: #ffe28c;
+  box-shadow: 0 0 4px 4px #ffe28c;
+  color: #e86209;
+}
+.btn {
+  width: 45%;
+  margin: 0 auto;
+}
+#beginPage .beginImg {
+  width: 90%;
+  display: block;
+  margin: 3% auto;
+}
+#beginPage #btnContainer {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 65%;
+  z-index: 100;
+}
+#beginPage #btnContainer div {
+  width: 45%;
+  height: 39%;
+  margin: 0 auto;
+}
+#beginPage #btnContainer .startBtn {
+  background: url("/praise_xi_shanbei/Public/images/startBtn.png") center center no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 6%;
+}
+#beginPage #btnContainer .listBtn {
+  background: url("/praise_xi_shanbei/Public/images/listBtn.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+#backPage {
+  position: relative;
+}
+#backPage .backImage {
+  width: 68%;
+  display: block;
+  margin: 4% auto;
+  margin-top: 0;
+}
+#backPage .Qc {
+  display: inline-block;
+  width: 100%;
+}
+#backPage .Qc .programerList {
+  background: linear-gradient(#ffd33b, #fc9a12);
+  height: 20px;
+  width: 20px;
+  line-height: 18px;
+  text-shadow: none;
+  border-radius: 50%;
+  text-align: center;
+  float: right;
+  margin: 10px;
+  color: #ffffff;
+}
+#backPage .introduction {
+  width: 70%;
+  display: block;
+  margin: 2% auto;
+}
+#backPage .playBtn {
+  background: url("/praise_xi_shanbei/Public/images/startGame.png") center center no-repeat;
+  background-size: 100% 100%;
+  height: 50%;
+  margin-bottom: 2%;
+  z-index: 100;
+}
+#backPage .btnC {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 15%;
+  top: 73%;
+}
+#backPage .returnBtn {
+  background: url("/praise_xi_shanbei/Public/images/return.png") center center no-repeat;
+  background-size: 100% 100%;
+  height: 50%;
+  z-index: 100;
+}
+#gamePage .Qtitle {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  text-shadow: none;
+  color: #ff960f;
+  font-size: 18px;
+  margin: 3% 0;
+}
+#gamePage .questionContainer {
+  width: 80%;
+  min-height: 70%;
+  background: url("/praise_xi_shanbei/Public/images/questionBack.png") center no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+  border-bottom: 10px solid #fff1af;
+  word-wrap: break-word;
+  position: relative;
+}
+#gamePage .questionContainer .flag {
+  width: 22%;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+}
+#gamePage .questionContainer .allusion {
+  padding-top: 10%;
+  overflow: hidden;
+  color: #fe9507;
+}
+#gamePage .questionContainer .allusion span {
+  float: left;
+  padding-left: 5px;
+}
+#gamePage .questionContainer .allusion .box {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#gamePage .questionContainer .allusion div > div {
+  width: 90%;
+  float: right;
+  font-size: 16px;
+  padding-right: 8px;
+}
+#gamePage .questionContainer .conversation {
+  padding-top: 10%;
+  display: none;
+  color: #ff8f00;
+}
+#gamePage .questionContainer .conversation div {
+  font-size: 17px !important;
+  padding: 13px;
+}
+#gamePage .nextBtn {
+  padding: 3% 0;
+  margin: 13px auto;
+  background: url("/praise_xi_shanbei/Public/images/blankBtn.png") center center no-repeat;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  background-size: 100% 100%;
+  margin-bottom: 10%;
+}
+#gamePage .nextBtn span {
+  margin-right: 2px;
+  font-size: 20px;
+}
+#overPage .firstState .goodBack {
+  width: 73%;
+  display: block;
+  margin: 10% auto;
+}
+#overPage .firstState .goOver {
+  height: 8%;
+  margin: 15px auto;
+  background: url("/praise_xi_shanbei/Public/images/goOver.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+#overPage .secondState {
+  display: none;
+}
+#overPage .secondState .cardTitle {
+  width: 73%;
+  display: block;
+  margin: 3% auto;
+}
+#overPage .secondState .cardBack {
+  width: 73%;
+  margin: 3% auto;
+  background: url("/praise_xi_shanbei/Public/images/cardBack.png") center no-repeat;
+  background-size: 100% 100%;
+  height: 46%;
+  position: relative;
+}
+#overPage .secondState .cardBack .num {
+  width: 100%;
+  position: absolute;
+  top: 33%;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: none;
+  left: -4px;
+  font-size: 21px;
+}
+#overPage .secondState .cardBack .sentence {
+  color: #ff9f10;
+  font-size: 16px;
+  position: absolute;
+  padding: 0 8%;
+  top: 65%;
+  line-height: 27px;
+}
+#overPage .secondState .cardBack .sentence span {
+  font-size: 16px;
+}
+#overPage .secondState .btn {
+  height: 8%;
+}
+#overPage .secondState .ok {
+  background: url("/praise_xi_shanbei/Public/images/ok.png") center no-repeat;
+  background-size: 100% 100%;
+  margin: 5% auto;
+}
+#overPage .secondState .replay {
+  background: url("/praise_xi_shanbei/Public/images/replay.png") center no-repeat;
+  background-size: 100% 100%;
+}
+#listPage {
+  position: relative;
+}
+#listPage .listBack {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 23%;
+  height: 68%;
+  background: url("/praise_xi_shanbei/Public/images/listBack.png") center no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+}
+#listPage .return {
+  background: url("/praise_xi_shanbei/Public/images/return.png") center no-repeat;
+  background-size: 100% 100%;
+  height: 8%;
+  margin-top: 3%;
+}
+#listPage .listTop {
+  top: 3%;
+  width: 90%;
+  height: 20%;
+  position: absolute;
+  z-index: 100;
+}
+#listPage .listHolder {
+  background: #fff6ef;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  top: 8%;
+  border-bottom: 3px solid #fbefe6;
+}
+#listPage .listHolder .list {
+  width: 100%;
+  list-style: none;
+}
+#listPage .listHolder .list li {
+  width: 100%;
+  padding: 2% 0;
+  color: #ffae15;
+  overflow: hidden;
+}
+#listPage .listHolder .list li .aName {
+  float: right;
+  padding-right: 20px;
+}
+#listPage .listHolder .list li .aRank {
+  float: left;
+  padding-left: 20px;
+}
+#listPage .listHolder .list li .aRank .medal {
+  height: 5%;
+  margin-left: -5px;
+}
+#listPage .listHolder .list li span {
+  display: inline-block;
+}
+#listPage .showP {
+  margin-top: 10%;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  width: 100%;
+}
+#listPage .showP span {
+  color: #ffae15;
+}
+@media (max-width: 330px) {
+  .allusion div > div {
+    width: 88% !important;
+    font-size: 14px !important;
+  }
+}

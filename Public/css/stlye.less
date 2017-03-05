@@ -1,0 +1,325 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: "Microsoft YaHei";
+  text-shadow: none !important;
+}
+#beginPage,#backPage,#gamePage,#overPage,#listPage{
+  position: relative;
+  background:url("../images/shadow.png")fixed bottom no-repeat  #ffe28c;
+  background-size: 100%;
+  .copyContainer{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    top: 97%;
+    .copyright{
+      border-radius: 5px;
+      background: #ffe28c;
+      box-shadow:0 0 4px 4px #ffe28c;
+      color: #e86209;
+    }
+  }
+}
+.btn{
+  width: 45%;
+  margin: 0 auto;
+}
+#beginPage{
+  .beginImg{
+    width: 90%;
+    display: block;
+    margin: 3% auto;
+  }
+  #btnContainer{
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: 65%;
+    z-index: 100;
+    div{
+      width: 45%;
+      height: 39%;
+      margin: 0 auto;
+    }
+    .startBtn{
+      background: url("../images/startBtn.png")center center no-repeat;
+      background-size: 100% 100%;
+      margin-bottom: 6%;
+    }
+    .listBtn{
+      background: url("../images/listBtn.png")center center no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}
+#backPage{
+  position: relative;
+  .backImage{
+    width: 68%;
+    display: block;
+    margin: 4% auto;
+    margin-top: 0;
+  }
+  .Qc{
+    display: inline-block;
+    width: 100%;
+    .programerList{
+      background: linear-gradient(#ffd33b,#fc9a12);
+      height: 20px;
+      width: 20px;
+      line-height: 18px;
+      text-shadow: none;
+      border-radius: 50%;
+      text-align: center;
+      float: right;
+      margin: 10px;
+      color: #ffffff;
+    }
+  }
+  .introduction{
+    width: 70%;
+    display: block;
+    margin: 2% auto;
+  }
+  .playBtn{
+    background: url("../images/startGame.png")center center no-repeat;
+    background-size: 100% 100%;
+    height: 50%;
+    margin-bottom: 2%;
+    z-index: 100;
+  }
+  .btnC{
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 15%;
+    top: 73%;
+  }
+  .returnBtn{
+    background: url("../images/return.png")center center no-repeat;
+    background-size: 100% 100%;
+    height: 50%;
+    z-index: 100;
+  }
+}
+#gamePage{
+  .Qtitle{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    text-shadow: none;
+    color: #ff960f;
+    font-size: 18px;
+    margin: 3% 0;
+  }
+  .questionContainer{
+    width: 80%;
+    min-height: 70%;
+    background: url("../images/questionBack.png")center no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    border-radius: 4px;
+    border-bottom: 10px solid #fff1af;
+    word-wrap:break-word;
+    position: relative;
+    .flag{
+      width: 22%;
+      position: absolute;
+      left:-10px;
+      top:-10px;
+    }
+    .allusion{
+      padding-top: 10%;
+      overflow: hidden;
+      span{
+        float: left;
+        padding-left:5px;
+      }
+      .box{
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      div>div{
+        width: 90%;
+        float: right;
+        font-size: 16px;
+        padding-right: 8px;
+      }
+      color: #fe9507;
+    }
+    .conversation{
+      padding-top: 10%;
+      display: none;
+      div{
+        font-size: 17px !important;
+        padding:13px;
+      }
+      color: #ff8f00;
+
+    }
+  }
+  .nextBtn{
+    padding: 3% 0;
+    margin: 13px auto;
+    background: url("../images/blankBtn.png")center center no-repeat;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    span{
+      margin-right: 2px;
+      font-size: 20px;
+    }
+    background-size: 100% 100%;
+    margin-bottom: 10%;
+  }
+}
+#overPage{
+  .firstState{
+    .goodBack{
+      width: 73%;
+      display: block;
+      margin: 10% auto;
+    }
+    .goOver{
+      height: 8%;
+      margin: 15px auto;
+      background: url("../images/goOver.png")center center no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .secondState{
+    display: none;
+    .cardTitle{
+      width: 73%;
+      display: block;
+      margin: 3% auto;
+    }
+    .cardBack{
+      width: 73%;
+      margin: 3% auto;
+      background: url("../images/cardBack.png") center no-repeat;
+      background-size: 100% 100%;
+      height: 46%;
+      position: relative;
+      .num{
+        width: 100%;
+        position: absolute;
+        top:33%;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: none;
+        left: -4px;
+        font-size: 21px;
+      }
+      .sentence{
+        color: #ff9f10;
+        font-size: 16px;
+        position: absolute;
+        padding: 0 8%;
+        top: 65%;
+        line-height: 27px;
+        span{
+          font-size: 16px;
+        }
+      }
+    }
+    .btn{
+      height: 8%;
+    }
+    .ok{
+      background: url("../images/ok.png")center no-repeat;
+      background-size: 100% 100%;
+      margin: 5% auto;
+    }
+    .replay{
+      background: url("../images/replay.png")center no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}
+#listPage{
+  position: relative;
+  .listBack{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 23%;
+    height: 68%;
+    background: url("../images/listBack.png")center no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+  }
+  .return{
+    background: url("../images/return.png")center no-repeat;
+    background-size: 100% 100%;
+    height: 8%;
+    margin-top: 3%;
+  }
+  .listTop{
+    top: 3%;
+    width: 90%;
+    height: 20%;
+    position: absolute;
+    z-index: 100;
+  }
+  .listHolder{
+    background: #fff6ef;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 8%;
+    border-bottom: 3px solid #fbefe6;
+    .list{
+      width: 100%;
+      list-style: none;
+      li{
+        width: 100%;
+        padding: 2% 0;
+        color: #ffae15;
+        overflow: hidden;
+        .aName{
+          float: right;
+          padding-right: 20px;
+        }
+        .aRank{
+          float: left;
+          padding-left: 20px;
+          .medal{
+            height: 5%;
+            margin-left: -5px;
+          }
+        }
+        span{
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .showP{
+    margin-top: 10%;
+    padding-left: 20px;
+    padding-bottom: 8px;
+    width: 100%;
+    span{
+      color: #ffae15;
+    }
+  }
+}
+@media (max-width: 330px) {
+  .allusion{
+    div>div{
+      width: 88% !important;
+      font-size: 14px !important;
+    }
+  }
+}
+
+//.box{
+//  width: 90%;
+//  margin: 0 auto;
+//  margin-bottom: 30%;
+//}

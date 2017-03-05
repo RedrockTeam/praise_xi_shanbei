@@ -1,16 +1,15 @@
 <?php
 namespace Home\Controller;
+use Org\Util\String;
 
 class IndexController extends BaseController {
+    private $appid = 'wx81a4a4b77ec98ff4';
+    private $acess_token = 'gh_68f0a1ffc303';
     public function index(){
-        $q = M('questions');
-        $data = $q->where("id < 630")->select();
-        foreach ($data as &$v) {
-            $v['extra0'] = $v['from'];
-            $q->where(array('id' => $v['id']))->save($v);
-        }
-        echo '等周老板了';
-        exit(0);
+        $signature = $this->JSSDKSignature();
+        $this->assign('signature', $signature);
+        $this->assign('appid', $this->appid);
+        $this->display();
     }
 
     public function questions() {
@@ -107,5 +106,61 @@ class IndexController extends BaseController {
                 'groups' => $user['count']
             )
         ));
+    }
+    public function JSSDKSignature(){
+        $string = new String();
+        $jsapi_ticket =  $this->getTicket();
+        $data['jsapi_ticket'] = $jsapi_ticket['data'];
+        $data['noncestr'] = $string->randString();
+        $data['timestamp'] = time();
+        $data['url'] = 'http://'.$_SERVER['HTTP_HOST'].__SELF__;//生成当前页面url
+        $data['signature'] = sha1($this->ToUrlParams($data));
+        return $data;
+    }
+    private function ToUrlParams($urlObj){
+        $buff = "";
+        foreach ($urlObj as $k => $v) {
+            if($k != "signature") {
+                $buff .= $k . "=" . $v . "&";
+            }
+        }
+        $buff = trim($buff, "&");
+        return $buff;
+    }
+
+
+    /*curl通用函数*/
+    private function curl_api($url, $data=''){
+        // 初始化一个curl对象
+        $ch = curl_init();
+        curl_setopt ( $ch, CURLOPT_URL, $url );
+        curl_setopt ( $ch, CURLOPT_POST, 1 );
+        curl_setopt ( $ch, CURLOPT_HEADER, 0 );
+        curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+        curl_setopt ( $ch, CURLOPT_POSTFIELDS, $data );
+        // 运行curl，获取网页。
+        $contents = json_decode(curl_exec($ch), true);
+        // 关闭请求
+        curl_close($ch);
+        return $contents;
+    }
+
+    private function getTicket() {
+        $time = time();
+        $str = 'abcdefghijklnmopqrstwvuxyz1234567890ABCDEFGHIJKLNMOPQRSTWVUXYZ';
+        $string='';
+        for($i=0;$i<16;$i++){
+            $num = mt_rand(0,61);
+            $string .= $str[$num];
+        }
+        $secret =sha1(sha1($time).md5($string)."redrock");
+        $t2 = array(
+            'timestamp'=>$time,
+            'string'=>$string,
+            'secret'=>$secret,
+            'token'=>$this->acess_token,
+        );
+        $url = "http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/Api/Api/apiJsTicket";
+        return $this->curl_api($url, $t2);
     }
 }
