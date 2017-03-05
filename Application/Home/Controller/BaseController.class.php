@@ -37,11 +37,12 @@ class BaseController extends Controller {
             );
             $userCurrent->add($currentData);
         } else {
-            $data = array(
-                'nickname' => $nickname,
-                'imgurl' => urldecode(I('get.headimgurl')),
-            );
-            $users->where(array('openid' => $openid))->save($data);
+            $img = I('get.headimgurl');
+            if ($nickname && $img) {
+                $data['nickname'] = $nickname;
+                $data['imgurl'] = urldecode($img);
+                $users->where(array('openid' => $openid))->save($data);
+            }
         }
     }
 }
