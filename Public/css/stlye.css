@@ -289,23 +289,24 @@
 #listPage .listBack {
   width: 90%;
   margin: 0 auto;
-  margin-top: 23%;
-  height: 68%;
+  top:17%;
+  height: 70%;
   background: url("/praise_xi_shanbei/Public/images/listBack.png") center no-repeat;
   background-size: 100% 100%;
-  position: relative;
+  position: absolute;
 }
 #listPage .return {
   background: url("/praise_xi_shanbei/Public/images/return.png") center no-repeat;
   background-size: 100% 100%;
-  height: 8%;
-  margin-top: 3%;
-  position: relative;
+  height: 5%;
+  width: 30%;
+  top: 88%;
+  position: absolute;
 }
 #listPage .listTop {
   top: 3%;
   width: 90%;
-  height: 20%;
+  height: 21%;
   position: absolute;
   z-index: 100;
 }
@@ -315,7 +316,7 @@
   margin: 0 auto;
   overflow: hidden;
   position: absolute;
-  top: 8%;
+  top: 4%;
   border-bottom: 3px solid #fbefe6;
 }
 #listPage .listHolder .list {
@@ -335,10 +336,11 @@
 #listPage .listHolder .list li .aRank {
   float: left;
   padding-left: 20px;
+  font-size: 15px;
 }
 #listPage .listHolder .list li .aRank .medal {
-  height: 5%;
   margin-left: -5px;
+  width: 65%;
 }
 #listPage .listHolder .list li span {
   display: inline-block;
@@ -352,6 +354,10 @@
 #listPage .showP span {
   color: #ffae15;
 }
+#listPage .test{
+  width:100%;
+  height: 100%;
+}
 @media (max-width: 330px) {
   .allusion div > div {
     width: 88% !important;
@@ -360,7 +366,7 @@
 }
 @media (min-width: 390px) {
   .medal {
-    height: 3% !important;
+    height: 1% !important;
     margin-left: -2px !important;
   }
 }

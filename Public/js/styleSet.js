@@ -14,4 +14,6 @@ $(function(){
     }
     $('.programerHolder').css('height',$(window).width()*0.6);
     $('.programerHolder').css('left',$(window).width()*0.19);
+    $('.listBack').css('left',$(window).width()*0.05);
+    $('.return').css('left',$(window).width()*0.35);
 });
