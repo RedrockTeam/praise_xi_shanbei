@@ -44,6 +44,6 @@ $(function(){
         }
     });
     var Imgs = ['au','back','backintro','beginXi','blankBtn','cardBack','Cu','flag','good','goOver','listBack','listBtn','listTop','myCardtitle','next','ok','questionBack','replay','return','shadow','si','startBtn','startGame'];
-    loadImgs(Imgs,showPage($('#beginPage')));
+    loadImgs(Imgs,showPage);
 });
 
