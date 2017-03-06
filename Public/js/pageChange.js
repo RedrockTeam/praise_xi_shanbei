@@ -6,6 +6,18 @@ timeNum = 15;
 nextFlag = 0;
 current = 1;
 $(function () {
+    $('.programerList').on('click',function(){
+        $('.mask').css('display','block');
+        $('.programerHolder').css('display','block');
+    });
+    $('.mask').on('click',function(){
+        $(this).css('display','none');
+        $('.programerHolder').css('display','none');
+    });
+    $('.programerHolder').on('click',function(){
+        $(this).css('display','none');
+        $('.mask').css('display','none');
+    });
    $('.startBtn').on('click',function(){
         $.mobile.changePage('#backPage',{
             transition:'flow'

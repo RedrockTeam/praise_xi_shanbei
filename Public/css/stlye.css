@@ -68,6 +68,45 @@
 #backPage {
   position: relative;
 }
+#backPage .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  background: #333333;
+  opacity: 0.6;
+  display: none;
+}
+#backPage .programerHolder {
+  display: none;
+  width: 60%;
+  position: absolute;
+  top: 20%;
+  z-index: 1100;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 8px solid #fff2b4;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px #fff2b4;
+}
+#backPage .programerHolder div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#backPage .programerHolder ul {
+  width: 70%;
+  left: 18%;
+  top: 10%;
+  list-style: none;
+  position: absolute;
+}
+#backPage .programerHolder li {
+  width: 100%;
+  color: #fea60b;
+  font-size: 15px;
+  line-height: 200%;
+}
 #backPage .backImage {
   width: 68%;
   display: block;
@@ -122,11 +161,11 @@
   text-shadow: none;
   color: #ff960f;
   font-size: 18px;
-  margin: 3% 0;
+  margin: 6% 0;
 }
 #gamePage .questionContainer {
   width: 80%;
-  min-height: 70%;
+  min-height: 80% !important;
   background: url("/praise_xi_shanbei/Public/images/questionBack.png") center no-repeat;
   background-size: 100% 100%;
   margin: 0 auto;
@@ -261,6 +300,7 @@
   background-size: 100% 100%;
   height: 8%;
   margin-top: 3%;
+  position: relative;
 }
 #listPage .listTop {
   top: 3%;
@@ -316,5 +356,11 @@
   .allusion div > div {
     width: 88% !important;
     font-size: 14px !important;
+  }
+}
+@media (min-width: 390px) {
+  .medal {
+    height: 3% !important;
+    margin-left: -2px !important;
   }
 }

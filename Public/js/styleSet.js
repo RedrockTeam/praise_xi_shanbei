@@ -12,4 +12,6 @@ $(function(){
             aLi.eq(i).css('background-color','#ffffff');
         }
     }
+    $('.programerHolder').css('height',$(window).width()*0.6);
+    $('.programerHolder').css('left',$(window).width()*0.19);
 });
