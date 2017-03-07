@@ -107,6 +107,26 @@ class IndexController extends BaseController {
             )
         ));
     }
+
+    public function moreRank() {
+        $from = I('post.from');
+        $to = I('post.to');
+        if (!is_numeric($from) || !is_numeric($to) || $to < $from) {
+            $this->ajaxReturn(array(
+                'status' => 403,
+                'error'  => '参数错误'
+            ));
+        }
+        $offset = $from - 1 >= 0 ? $from - 1:0;
+        $limit = $to - $offset;
+        $users = M('users');
+        $list = $users->order('score desc')->field('nickname, score')->limit($offset, $limit)->select();
+        $this->ajaxReturn(array(
+            'status' => 200,
+            'data'  => $list
+        ));
+    }
+
     public function JSSDKSignature(){
         $string = new String();
         $jsapi_ticket =  $this->getTicket();
