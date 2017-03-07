@@ -4,7 +4,7 @@ use Think\Controller;
 class BaseController extends Controller {
     public function _initialize(){
         header('Access-Control-Allow-Origin: *');
-        $openid = 'ouRCyjhdsj8RQofIOPHc7nX9hA98';//session('openid');
+        $openid = 'ouRCyjhdsj8RQofIOPHc7nX9hA98';//session('openid');//
         if (!$openid) {
             $openid = I('get.openid');
         }
@@ -12,7 +12,7 @@ class BaseController extends Controller {
             $uri = 'http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect='.urlencode('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
             redirect($uri);
         }
-        $nickname = '知识混子周政';//urldecode(I('get.nickname'));
+        $nickname = '知识混子周政';//urldecode(I('get.nickname'));//;
         session('openid', $openid);
         session('nickname', $nickname);
         $users = M('users');
