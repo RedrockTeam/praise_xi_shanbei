@@ -11,6 +11,7 @@ $(document).on("pageshow","#beginPage",function(){
 });
 var question_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/questions";
 var rank_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/moreRank";
+var link_rank = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/rank";
 function loadImgs(b, g) {
     var f = {};
     var d = 0;
@@ -40,15 +41,24 @@ $(function(){
     $.mobile.loading('show');
     var _data = {};
     _data.from = 1;
-    _data.to = 100;
+    _data.to = 50;
+    $.post(link_rank,1,function(data){
+        if(data.status == 200){
+            $('.usrName').html(data.data.nickname);
+            $('.rankNum').html(data.data.rank);
+            $('.days').html(data.data.days);
+            $('.groups').html(data.data.groups);
+            $('.rankNow').html(data.data.rank);
+        }else {
+            alert(data.error);
+        }
+    });
     $.post(rank_link,_data,function(data){
-        console.log(data.data);
+        $.mobile.loading('hide');
         if(data.status == 200){
             var aList = $('.aName');
             var aRank = $('.aRank');
-            $('.usrName').html(data.data.nickname);
-            $('.rankNum').html(data.data.rank);
-            for (var i = 0 ; i < 100 ; i++){
+            for (var i = 0 ; i < 50 ; i++){
                 if(data.data[i]){
                     aList.eq(i+1).html(data.data[i].nickname);
                     aRank.eq(i+1).html(i+1);

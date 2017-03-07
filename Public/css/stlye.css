@@ -345,6 +345,12 @@
   padding-left: 20px;
   font-size: 15px;
 }
+#listPage .goCardPage{
+  float: right;
+  color: #ff0000 !important;
+  margin-right: 30px;
+  text-decoration: underline;
+}
 #gamePage{
   position: relative;
 }
@@ -381,6 +387,12 @@
   }
   .sentences{
     font-size: 15px !important;
+  }
+  .sentence{
+    font-size: 13px !important;
+  }
+  .sentence span{
+    font-size: 13px !important;
   }
 }
 @media (min-width: 390px) {

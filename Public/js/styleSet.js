@@ -6,7 +6,7 @@ $(function(){
     $('.listHolder').css('margin-top',$(window).height()*0.23);
     aLi = $('.list').find('li');
     console.log(aLi.eq(2).height());
-    for(var i = 1 ; i < 101 ; i++){
+    for(var i = 1 ; i < 51 ; i++){
         if (i%2){
 
             aLi.eq(i).css('background-color','#ffffff');

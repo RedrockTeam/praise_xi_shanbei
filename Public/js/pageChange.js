@@ -90,9 +90,11 @@ $(function () {
         nextFlag = 0;
         if(current == 5){
             $.mobile.loading('show');
-            $.post(rank_link,1,function(data){
+            $.post(link_rank,1,function(data){
                 $.mobile.loading('hide');
                 if(data.status == 200){
+                    $('.secondState').css('display','none');
+                    $('.firstState').css('display','block');
                     $('.days').html(data.data.days);
                     $('.groups').html(data.data.groups);
                     $('.rankNow').html(data.data.rank);
@@ -158,6 +160,13 @@ $(function () {
     $('.goOver').on('click',function(){
        $('.firstState').css('display','none');
         $('.secondState').css('display','block');
+    });
+    $('.goCardPage').on('click',function(){
+        $('.firstState').css('display','none');
+        $('.secondState').css('display','block');
+        $.mobile.changePage('#overPage',{
+            transition:'flow'
+        });
     });
     $('.ok').on('click',function(){
         $('.secondState').css('display','none');
