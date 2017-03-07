@@ -351,9 +351,6 @@
   margin-right: 30px;
   text-decoration: underline;
 }
-#gamePage{
-  position: relative;
-}
 #listPage .listHolder .list li .aRank .medal {
   margin-left: -5px;
   width: 65%;
@@ -402,6 +399,9 @@
   }
 }
 @media screen and (max-height:600px) and (min-height:500px) {
+  .cardBack{
+    height: 48% !important;
+  }
   .replay{
     top:71.5% !important;
   }

@@ -17,4 +17,7 @@ $(function(){
     $('.return').css('left',$(window).width()*0.35);
     $('.cardBack').css('left',$(window).width()*0.135);
     $('.bug').css('left',$(window).width()*0.2525);
+    $('.nextBtn').on('click',function(){
+        $('#gamePage').css('min-height',$(window).height()+' !important');
+    })
 });
