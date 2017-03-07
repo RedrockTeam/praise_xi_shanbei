@@ -12,7 +12,7 @@ class BaseController extends Controller {
             $uri = 'http://hongyan.cqupt.edu.cn/MagicLoop/index.php?s=/addon/Api/Api/oauth&redirect='.urlencode('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
             redirect($uri);
         }
-        $nickname = '知识混子周政';//urldecode(I('get.nickname'));//;
+        $nickname = '知识混子周政';//urldecode(I('get.nickname'));//
         session('openid', $openid);
         session('nickname', $nickname);
         $users = M('users');

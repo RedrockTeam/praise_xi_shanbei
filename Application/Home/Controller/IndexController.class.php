@@ -28,7 +28,7 @@ class IndexController extends BaseController {
         }
 
         //检查学习题目上限
-        if ($currentData['today_group_count'] == 3) { //todo
+        if ($currentData['today_group_count'] == 3000) {
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'  => '每天最多只能学三组题'
@@ -48,7 +48,7 @@ class IndexController extends BaseController {
         }
 
         //请求新题目时检查时间是否满足
-        if (time() - $currentData['time'] < 1 && $isNew) { //todo
+        if (time() - $currentData['time'] < 1 && $isNew) {
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'   => '学习时间未满'
@@ -107,6 +107,26 @@ class IndexController extends BaseController {
             )
         ));
     }
+
+    public function moreRank() {
+        $from = I('post.from');
+        $to = I('post.to');
+        if (!is_numeric($from) || !is_numeric($to) || $to < $from) {
+            $this->ajaxReturn(array(
+                'status' => 403,
+                'error'  => '参数错误'
+            ));
+        }
+        $offset = $from - 1 >= 0 ? $from - 1:0;
+        $limit = $to - $offset;
+        $users = M('users');
+        $list = $users->order('score desc')->field('nickname, score')->limit($offset, $limit)->select();
+        $this->ajaxReturn(array(
+            'status' => 200,
+            'data'  => $list
+        ));
+    }
+
     public function JSSDKSignature(){
         $string = new String();
         $jsapi_ticket =  $this->getTicket();
