@@ -76,7 +76,7 @@ $(function () {
                     transition:'flow'
                 });
             }else{
-                alert(data.info);
+                alert(data.error);
             }
         });
     });
