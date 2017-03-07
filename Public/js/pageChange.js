@@ -77,13 +77,7 @@ $(function () {
                         transition:'flow'
                     });
                 },200);
-            }else if(data.status == 403){
-                alert(data.error);
-                $.mobile.loading('hide');
-                $.mobile.changePage('#beginPage',{
-                    transition:'flow'
-                });
-            } else{
+            }else{
                 alert(data.error);
             }
         });
