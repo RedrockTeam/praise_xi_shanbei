@@ -72,7 +72,7 @@ $(function () {
                     $('.provenance').html(data.data.question.extra0);
                 }
                 current = data.data.current;
-                $.mobile.changePage('#overPage',{
+                $.mobile.changePage('#gamePage',{
                     transition:'flow'
                 });
             }else{
