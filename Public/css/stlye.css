@@ -64,9 +64,6 @@
   background: url("/praise_xi_shanbei/Public/images/listBtn.png") center center no-repeat;
   background-size: 100% 100%;
 }
-#backPage {
-  position: relative;
-}
 #backPage .mask {
   width: 100%;
   height: 100%;
@@ -156,11 +153,12 @@
 #gamePage .Qtitle {
   text-align: center;
   display: inline-block;
-  width: 100%;
+  width: 95%;
   text-shadow: none;
   color: #ff960f;
   font-size: 18px;
   margin: 6% 0;
+  padding: 0 5px;
 }
 #gamePage .questionContainer {
   width: 80%;
@@ -222,16 +220,13 @@
   margin-right: 2px;
   font-size: 20px;
 }
-#overPage{
-  position: relative;
-}
 #overPage .firstState .goodBack {
   width: 73%;
   display: block;
   margin: 10% auto;
 }
 #overPage .firstState .goOver {
-  height: 8%;
+  padding: 7% 0;
   margin: 15px auto;
   background: url("/praise_xi_shanbei/Public/images/goOver.png") center center no-repeat;
   background-size: 100% 100%;
@@ -289,9 +284,6 @@
   background: url("/praise_xi_shanbei/Public/images/replay.png") center no-repeat;
   background-size: 100% 100%;
   top: 65%;
-}
-#listPage {
-  position: relative;
 }
 #listPage .listBack {
   width: 90%;
@@ -372,6 +364,9 @@
   }
   .programer li{
     font-size: 12px !important;
+  }
+  .Qtitle{
+    font-size: 16px !important;
   }
 }
 @media (min-width: 390px) {

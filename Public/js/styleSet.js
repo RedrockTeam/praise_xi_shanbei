@@ -16,7 +16,6 @@ $(function(){
     $('.programerHolder').css('left',$(window).width()*0.19);
     $('.listBack').css('left',$(window).width()*0.05);
     $('.return').css('left',$(window).width()*0.35);
-    $('.goOver').css('height',$(window).height()*0.08);
     $('.cardBack').css('left',$(window).width()*0.135);
     $('.bug').css('left',$(window).width()*0.2525);
 });
