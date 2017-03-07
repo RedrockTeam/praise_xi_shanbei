@@ -73,7 +73,7 @@ $(function () {
                 current = data.data.current;
                 setTimeout(function(){
                     $.mobile.loading('hide');
-                    $.mobile.changePage('#overPage',{
+                    $.mobile.changePage('#gamePage',{
                         transition:'flow'
                     });
                 },200);
