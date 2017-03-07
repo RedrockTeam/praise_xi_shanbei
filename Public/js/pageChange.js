@@ -50,7 +50,6 @@ $(function () {
         $.mobile.loading('show');
         $.post(question_link,1,function(data){
             console.log(data.data);
-            $.mobile.loading('hide');
             if(data.status == 200){
                 $('.Qtitle').html(data.data.question.title);
                 if(data.data.question.type == 'gushidiangu'){
@@ -72,11 +71,14 @@ $(function () {
                     $('.provenance').html(data.data.question.extra0);
                 }
                 current = data.data.current;
-                $.mobile.changePage('#gamePage',{
-                    transition:'flow'
-                });
+                setTimeout(function(){
+                    $.mobile.loading('hide');
+                    $.mobile.changePage('#gamePage',{
+                        transition:'flow'
+                    });
+                },200);
             }else{
-                alert(data.info);
+                alert(data.error);
             }
         });
     });
@@ -98,7 +100,7 @@ $(function () {
                         transition:'flow'
                     });
                 }else {
-                    alert(data.info);
+                    alert(data.error);
                 }
             });
             return false;
@@ -158,6 +160,12 @@ $(function () {
         $('.secondState').css('display','block');
     });
     $('.ok').on('click',function(){
+        $('.secondState').css('display','none');
+        $('.firstState').css('display','block');
+        timeNum = 15;
+        $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
+        $('.nextBtn').html('<span class="time">15</span>s');
+        $('.nextBtn').css('padding','3% 0');
         $.mobile.changePage('#beginPage',{
             transition:'flow'
         });
