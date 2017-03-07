@@ -28,7 +28,7 @@ class IndexController extends BaseController {
         }
 
         //检查学习题目上限
-        if ($currentData['today_group_count'] == 3) { 
+        if ($currentData['today_group_count'] == 3) {
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'  => '每天最多只能学三组题'
