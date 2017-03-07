@@ -13,13 +13,14 @@
         <script src = '__PUBLIC__/js/main.js?v={:time()}'></script>
         <script src = "__PUBLIC__/js/styleSet.js?v={:time()}"></script>
         <link rel="stylesheet" href="__PUBLIC__/css/stlye.css?v={:time()}">
+        <link rel="stylesheet" href="__PUBLIC__/css/animate.min.css?v={:time()}">
     </head>
     <body>
         <div data-role="page" id="mask">
 
         </div>
         <div data-role="page" id="beginPage">
-            <img src="__PUBLIC__/images/beginXi.png" alt="" class="beginImg">
+            <img src="__PUBLIC__/images/beginXi.png" alt="" class="animated pulse beginImg" style = '-webkit-animation:pulse 1s infinite linear ;animation:pulse 1s infinite linear ;'>
             <div id="btnContainer">
                 <div class="startBtn btn"></div>
                 <div class="listBtn btn"></div>
