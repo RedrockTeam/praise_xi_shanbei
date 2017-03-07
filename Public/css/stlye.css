@@ -10,7 +10,6 @@
 #gamePage,
 #overPage,
 #listPage {
-  position: relative;
   background: url("/praise_xi_shanbei/Public/images/shadow.png") fixed bottom no-repeat #ffe28c;
   background-size: 100%;
 }
@@ -146,7 +145,7 @@
   z-index: 100;
   width: 100%;
   height: 15%;
-  top: 73%;
+  top: 71%;
 }
 #backPage .returnBtn {
   background: url("/praise_xi_shanbei/Public/images/return.png") center center no-repeat;
@@ -223,6 +222,9 @@
   margin-right: 2px;
   font-size: 20px;
 }
+#overPage{
+  position: relative;
+}
 #overPage .firstState .goodBack {
   width: 73%;
   display: block;
@@ -247,8 +249,11 @@
   margin: 3% auto;
   background: url("/praise_xi_shanbei/Public/images/cardBack.png") center no-repeat;
   background-size: 100% 100%;
-  height: 46%;
-  position: relative;
+  height: 43%;
+  position: absolute;
+}
+#overPage .secondState .bug{
+  position: absolute;
 }
 #overPage .secondState .cardBack .num {
   width: 100%;
@@ -278,10 +283,12 @@
   background: url("/praise_xi_shanbei/Public/images/ok.png") center no-repeat;
   background-size: 100% 100%;
   margin: 5% auto;
+  top: 72%;
 }
 #overPage .secondState .replay {
   background: url("/praise_xi_shanbei/Public/images/replay.png") center no-repeat;
   background-size: 100% 100%;
+  top: 65%;
 }
 #listPage {
   position: relative;
@@ -362,6 +369,9 @@
   .allusion div > div {
     width: 88% !important;
     font-size: 14px !important;
+  }
+  .programer li{
+    font-size: 12px !important;
   }
 }
 @media (min-width: 390px) {

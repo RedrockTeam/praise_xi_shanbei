@@ -49,6 +49,7 @@ $(function () {
         },1000);
         $.mobile.loading('show');
         $.post(question_link,1,function(data){
+            console.log(data.data);
             $.mobile.loading('hide');
             if(data.status == 200){
                 $('.Qtitle').html(data.data.question.title);
