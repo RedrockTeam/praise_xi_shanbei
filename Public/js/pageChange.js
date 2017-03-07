@@ -10,13 +10,9 @@ $(function () {
         $('.mask').css('display','block');
         $('.programerHolder').css('display','block');
     });
-    $('.mask').on('click',function(){
-        $(this).css('display','none');
-        $('.programerHolder').css('display','none');
-    });
-    $('.programerHolder').on('click',function(){
-        $(this).css('display','none');
+    $('.x').on('click',function(){
         $('.mask').css('display','none');
+        $('.programerHolder').css('display','none');
     });
    $('.startBtn').on('click',function(){
         $.mobile.changePage('#backPage',{
@@ -25,7 +21,7 @@ $(function () {
     });
     $('.listBtn').on('click',function(){
         $.mobile.changePage('#listPage',{
-            transition:'turn'
+            transition:'flow'
         });
     });
     $('.returnBtn').on('click',function(){
@@ -33,7 +29,11 @@ $(function () {
             transition:'flow'
         });
     });
-
+    $('.return').on('click',function(){
+        $.mobile.changePage('#beginPage',{
+            transition:'flow'
+        });
+    });
     $('.playBtn').on('click',function(){
         clearInterval(timer);
         timer = setInterval(function(){
@@ -73,7 +73,7 @@ $(function () {
                 current = data.data.current;
                 setTimeout(function(){
                     $.mobile.loading('hide');
-                    $.mobile.changePage('#gamePage',{
+                    $.mobile.changePage('#overPage',{
                         transition:'flow'
                     });
                 },200);
@@ -180,10 +180,5 @@ $(function () {
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
         $('.nextBtn').html('<span class="time">15</span>s');
         $('.nextBtn').css('padding','3% 0');
-    });
-    $('.return').on('click',function(){
-        $.mobile.changePage('#beginPage',{
-            transition:'flow'
-        });
     });
 });

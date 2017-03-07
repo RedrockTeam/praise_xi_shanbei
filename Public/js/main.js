@@ -1,8 +1,16 @@
 /**
  * Created by hughes on 2017/3/4.
  */
+$(document).on("pageshow","#beginPage",function(){
+    $('.beginImg').addClass('gogogo');
+    $(document).off("pageshow","#beginPage");
+    setTimeout(function(){
+        $('.beginImg').removeClass('gogogo');
+        $('.beginImg').removeClass('pulse');
+    },3000);
+});
 var question_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/questions";
-var rank_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/rank";
+var rank_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/moreRank";
 function loadImgs(b, g) {
     var f = {};
     var d = 0;
@@ -30,17 +38,27 @@ function showPage(obj){
 }
 $(function(){
     $.mobile.loading('show');
-    $.post(rank_link,1,function(data){
+    var _data = {};
+    _data.from = 1;
+    _data.to = 100;
+    $.post(rank_link,_data,function(data){
+        console.log(data.data);
         if(data.status == 200){
             var aList = $('.aName');
+            var aRank = $('.aRank');
             $('.usrName').html(data.data.nickname);
             $('.rankNum').html(data.data.rank);
-            console.log(data.data);
-            for (var i = 0 ; i < 10 ; i++){
-                aList.eq(i+1).html(data.data.list[i].nickname);
+            for (var i = 0 ; i < 100 ; i++){
+                if(data.data[i]){
+                    aList.eq(i+1).html(data.data[i].nickname);
+                    aRank.eq(i+1).html(i+1);
+                }else{
+                    aRank.eq(i+1).html(i+1);
+                    aList.eq(i+1).html("无");
+                }
             }
         }else {
-            alert(data.info);
+            alert(data.status);
         }
     });
     var Imgs = ['au','back','backintro','beginXi','blankBtn','cardBack','Cu','flag','good','goOver','listBack','listBtn','listTop','myCardtitle','next','ok','questionBack','replay','return','shadow','si','startBtn','startGame'];
