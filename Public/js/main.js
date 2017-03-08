@@ -65,7 +65,7 @@ $(function(){
                     aList.eq(i+1).html(data.data[i].nickname);
                     aAvatar.eq(i).attr('src',data.data[i].imgurl);
                     if(i){
-                        aRank.eq(i).html(i+3);
+                        aRank.eq(i).html(data.data[i].rank);
                     }
                 }else{
                     if(i){
