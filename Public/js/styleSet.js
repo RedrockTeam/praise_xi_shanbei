@@ -21,4 +21,5 @@ $(function(){
         $('#gamePage').css('min-height',$(window).height()+' !important');
     });
     $('.warning').css({'left':$(window).width()*0.25,'height':$(window).width()*0.5});
+    $('.avatar').css('height',$(window).width()*0.24);
 });
