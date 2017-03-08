@@ -133,7 +133,7 @@ $(function () {
             return false;
         }
         nextFlag = 0;
-        console.log(nextFlag);
+        $('.ui-page').css('min-height',$(window).height()+' !important');
         if(current == 5){
             $.mobile.loading('show');
             $.post(link_rank,1,function(data){
