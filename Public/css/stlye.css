@@ -83,7 +83,6 @@
   background: #ffffff;
   border-radius: 5px;
   border: 8px solid #fff2b4;
-  overflow: hidden;
   box-shadow: inset 0 0 50px #fff2b4;
 }
 #backPage .programerHolder .pBox {
@@ -91,10 +90,15 @@
   width: 100%;
   height: 100%;
 }
-#backPage .programerHolder .pBox .x{
-  float: right;
-  font-size: 25px;
-  margin-right: 3%;
+#backPage .programerHolder .pBox .closeP{
+  font-size: 16px;
+  color: #fff1b1;
+  padding: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background: #f39c12;
+  left: 90%;
+  top: -7%;
 }
 #backPage .programerHolder ul {
   width: 70%;
@@ -152,7 +156,7 @@
 #backPage .warning{
   position: absolute;
   top:20%;
-  width: 50%;
+  width: 70%;
   background: url("/praise_xi_shanbei/Public/images/warning.png")center no-repeat;
   background-size: 100% 100%;
   z-index: 10000;
@@ -170,8 +174,8 @@
   position: absolute;
   border-radius: 50%;
   background: #f39c12;
-  left: -5%;
-  top: -5%;
+  left: 90%;
+  top: -4%;
 }
 #backPage .returnBtn {
   background: url("/praise_xi_shanbei/Public/images/return.png") center center no-repeat;

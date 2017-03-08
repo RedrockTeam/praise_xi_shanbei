@@ -2,7 +2,7 @@
  * Created by hughes on 2017/3/4.
  */
 timer = null;
-timeNum = 3;
+timeNum = 15;
 nextFlag = 0;
 current = 1;
 $(function () {
@@ -10,7 +10,7 @@ $(function () {
         $('.mask').css('display','block');
         $('.programerHolder').css('display','block');
     });
-    $('.x').on('click',function(){
+    $('.closeP').on('click',function(){
         $('.mask').css('display','none');
         $('.programerHolder').css('display','none');
     });
@@ -128,9 +128,9 @@ $(function () {
         }
         clearInterval(timer);
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
-        $('.nextBtn').html('<span class="time">3</span>s');
+        $('.nextBtn').html('<span class="time">15</span>s');
         $('.nextBtn').css('padding','3% 0');
-        timeNum = 3;
+        timeNum = 15;
         timer = setInterval(function(){
             timeNum--;
             $('.time').html(timeNum);
@@ -196,9 +196,9 @@ $(function () {
     $('.ok').on('click',function(){
         $('.secondState').css('display','none');
         $('.firstState').css('display','block');
-        timeNum = 3;
+        timeNum = 15;
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
-        $('.nextBtn').html('<span class="time">3</span>s');
+        $('.nextBtn').html('<span class="time">15</span>s');
         $('.nextBtn').css('padding','3% 0');
         $.mobile.changePage('#beginPage',{
             transition:'flow'
@@ -210,9 +210,9 @@ $(function () {
         $.mobile.changePage('#backPage',{
             transition:'flow'
         });
-        timeNum = 3;
+        timeNum = 15;
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
-        $('.nextBtn').html('<span class="time">3</span>s');
+        $('.nextBtn').html('<span class="time">15</span>s');
         $('.nextBtn').css('padding','3% 0');
     });
 });

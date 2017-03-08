@@ -21,7 +21,7 @@ $(function(){
     $('.nextBtn').on('click',function(){
         $('#gamePage').css('min-height',$(window).height()+' !important');
     });
-    $('.warning').css({'left':$(window).width()*0.25,'height':$(window).width()*0.5});
+    $('.warning').css({'left':$(window).width()*0.15,'height':$(window).width()*0.7});
     $('.avatar').css('height',$(window).width()*0.208);
     $('.avatarBox').css('height',$(window).width()*0.056);
 });
