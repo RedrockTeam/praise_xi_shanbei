@@ -44,6 +44,7 @@ $(function(){
         if(data.status == 200){
             $('.usrName').html(data.data.nickname);
             $('.rankNum').html(data.data.rank);
+            $('.num').html(data.data.days);
             $('.days').html(data.data.days);
             $('.groups').html(data.data.groups);
             $('.rankNow').html(data.data.rank);

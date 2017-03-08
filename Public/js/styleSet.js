@@ -16,7 +16,9 @@ $(function(){
     $('.programerHolder').css('left',$(window).width()*0.19);
     $('.return').css('left',$(window).width()*0.35);
     $('.cardBack').css('left',$(window).width()*0.135);
-    $('.bug').css('left',$(window).width()*0.2525);
+    $('.cardBack').css('height',$(window).width()*0.81);
+    $('.ok').css('margin-top',$(window).width()*0.89);
+    $('.btnC').css('top',$(window).width()*1.1);
     $('.nextBtn').on('click',function(){
         $('#gamePage').css('min-height',$(window).height()+' !important');
     })

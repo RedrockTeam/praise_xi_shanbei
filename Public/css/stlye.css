@@ -148,7 +148,6 @@
   z-index: 100;
   width: 100%;
   height: 15%;
-  top: 77%;
 }
 #backPage .returnBtn {
   background: url("/praise_xi_shanbei/Public/images/return.png") center center no-repeat;
@@ -207,6 +206,11 @@
   display: none;
   color: #ff8f00;
 }
+#gamePage .littleTitle{
+  text-align: center;
+  font-size: 17px !important;
+  padding: 5px 13px;
+}
 #gamePage .questionContainer .conversation div {
   font-size: 17px !important;
   padding: 13px;
@@ -231,7 +235,7 @@
   margin: 10% auto;
 }
 #overPage .firstState .goOver {
-  padding: 7% 0;
+  padding: 6.5% 0;
   margin: 15px auto;
   background: url("/praise_xi_shanbei/Public/images/goOver.png") center center no-repeat;
   background-size: 100% 100%;
@@ -249,11 +253,10 @@
   margin: 3% auto;
   background: url("/praise_xi_shanbei/Public/images/cardBack.png") center no-repeat;
   background-size: 100% 100%;
-  height: 46%;
   position: absolute;
 }
 #overPage .secondState .bug{
-  position: absolute;
+  padding: 5.8% 0;
 }
 #overPage .secondState .cardBack .num {
   width: 100%;
@@ -283,12 +286,11 @@
   background: url("/praise_xi_shanbei/Public/images/ok.png") center no-repeat;
   background-size: 100% 100%;
   margin: 5% auto;
-  top: 77%;
 }
 #overPage .secondState .replay {
   background: url("/praise_xi_shanbei/Public/images/replay.png") center no-repeat;
   background-size: 100% 100%;
-  top: 70%;
+  margin-bottom: 3%;
 }
 #listPage .listBack {
   width: 90%;
@@ -394,15 +396,9 @@
     margin-left: -2px !important;
   }
 }
-@media screen and (max-height:600px) and (min-height:500px) {
+@media screen and (max-height:630px) and (min-height:520px) {
   .cardBack{
     height: 48% !important;
-  }
-  .replay{
-    top:71.5% !important;
-  }
-  .ok{
-    top:79% !important;
   }
   .btn{
     width: 40%;

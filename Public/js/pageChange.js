@@ -2,7 +2,7 @@
  * Created by hughes on 2017/3/4.
  */
 timer = null;
-timeNum = 15;
+timeNum = 3;
 nextFlag = 0;
 current = 1;
 $(function () {
@@ -73,7 +73,7 @@ $(function () {
                 current = data.data.current;
                 setTimeout(function(){
                     $.mobile.loading('hide');
-                    $.mobile.changePage('#gamePage',{
+                    $.mobile.changePage('#overPage',{
                         transition:'flow'
                     });
                 },200);
@@ -96,6 +96,7 @@ $(function () {
                     $('.secondState').css('display','none');
                     $('.firstState').css('display','block');
                     $('.days').html(data.data.days);
+                    $('.num').html(data.data.days);
                     $('.groups').html(data.data.groups);
                     $('.rankNow').html(data.data.rank);
                     $.mobile.changePage('#overPage',{
@@ -109,9 +110,9 @@ $(function () {
         }
         clearInterval(timer);
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
-        $('.nextBtn').html('<span class="time">15</span>s');
+        $('.nextBtn').html('<span class="time">3</span>s');
         $('.nextBtn').css('padding','3% 0');
-        timeNum = 15;
+        timeNum = 3;
         timer = setInterval(function(){
             timeNum--;
             $('.time').html(timeNum);
@@ -128,7 +129,13 @@ $(function () {
         $.mobile.loading('show');
         $.post(question_link,_data,function(data){
             $.mobile.loading('hide');
-            $('.Qtitle').html(data.data.question.title);
+            if(data.data.question.bigtitle){
+                $('.Qtitle').html(data.data.question.bigtitle);
+
+            }
+            else {
+                $('.Qtitle').html(data.data.question.title);
+            }
             if(data.status == 200){
                 console.log(data.data);
                 if(data.data.question.type == 'gushidiangu'){
@@ -171,9 +178,9 @@ $(function () {
     $('.ok').on('click',function(){
         $('.secondState').css('display','none');
         $('.firstState').css('display','block');
-        timeNum = 15;
+        timeNum = 3;
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
-        $('.nextBtn').html('<span class="time">15</span>s');
+        $('.nextBtn').html('<span class="time">3</span>s');
         $('.nextBtn').css('padding','3% 0');
         $.mobile.changePage('#beginPage',{
             transition:'flow'
@@ -185,9 +192,9 @@ $(function () {
         $.mobile.changePage('#backPage',{
             transition:'flow'
         });
-        timeNum = 15;
+        timeNum = 3;
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
-        $('.nextBtn').html('<span class="time">15</span>s');
+        $('.nextBtn').html('<span class="time">3</span>s');
         $('.nextBtn').css('padding','3% 0');
     });
 });
