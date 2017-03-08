@@ -449,7 +449,7 @@
             var shareTitle = '学讲话赞习大大';
             var shareURL = "{$signature['url']}";
             var shareImg = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Public/images/share.png";
-            function initShare() {
+            function initShare(shareTitle, shareURL, shareImg) {
                 wx.ready(function(){
                     wx.onMenuShareTimeline({
                         title: shareTitle, // 分享标题
@@ -502,7 +502,7 @@
                     });
                 });
             }
-            initShare();
+            initShare(shareTitle, shareURL, shareImg);
         </script>
 
     </body>
