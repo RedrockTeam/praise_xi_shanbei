@@ -34,6 +34,10 @@ $(function () {
             transition:'flow'
         });
     });
+    $('.close').on('tap',function(){
+        $('.warning').css('display','none');
+        $('.mask').css('display','none');
+    });
     $('.playBtn').on('click',function(){
         clearInterval(timer);
         timer = setInterval(function(){
@@ -49,9 +53,17 @@ $(function () {
         },1000);
         $.mobile.loading('show');
         $.post(question_link,1,function(data){
-            console.log(data.data);
             if(data.status == 200){
-                $('.Qtitle').html(data.data.question.title);
+                console.log(data.data.question.bigtitle);
+                if(data.data.question.bigtitle){
+                    $('.Qtitle').html(data.data.question.bigtitle);
+                    $('.littleTitle').css('display',"inline-block");
+                    $('.littleTitle').html(data.data.question.title);
+                }
+                else {
+                    $('.littleTitle').css('display',"none");
+                    $('.Qtitle').html(data.data.question.title);
+                }
                 if(data.data.question.type == 'gushidiangu'){
                     $('.allusion').css('display','block');
                     $('.conversation').css('display','none');
@@ -73,11 +85,15 @@ $(function () {
                 current = data.data.current;
                 setTimeout(function(){
                     $.mobile.loading('hide');
-                    $.mobile.changePage('#overPage',{
+                    $.mobile.changePage('#gamePage',{
                         transition:'flow'
                     });
                 },200);
+            }else if (data.status == 403){
+                $('.warning').css('display','block');
+                $('.mask').css('display','block');
             }else{
+
                 alert(data.error);
             }
         });
@@ -88,6 +104,7 @@ $(function () {
             return false;
         }
         nextFlag = 0;
+        console.log(nextFlag);
         if(current == 5){
             $.mobile.loading('show');
             $.post(link_rank,1,function(data){
@@ -129,17 +146,18 @@ $(function () {
         $.mobile.loading('show');
         $.post(question_link,_data,function(data){
             $.mobile.loading('hide');
+            console.log(data.data.question.bigtitle);
             if(data.data.question.bigtitle){
                 $('.Qtitle').html(data.data.question.bigtitle);
-
+                $('.littleTitle').css('display',"inline-block");
+                $('.littleTitle').html(data.data.question.title);
             }
             else {
+                $('.littleTitle').css('display',"none");
                 $('.Qtitle').html(data.data.question.title);
             }
             if(data.status == 200){
-                console.log(data.data);
                 if(data.data.question.type == 'gushidiangu'){
-                    console.log(1);
                     $('.allusion').css('display','block');
                     $('.conversation').css('display','none');
                     if(data.data.question.extra0){
@@ -152,7 +170,6 @@ $(function () {
                         $('.box').eq(0).css('display','block');
                     }
                 }else{
-                    console.log(2);
                     $('.conversation').css('display','block');
                     $('.allusion').css('display','none');
                     $('.sentences').html(data.data.question.content);

@@ -149,6 +149,30 @@
   width: 100%;
   height: 15%;
 }
+#backPage .warning{
+  position: absolute;
+  top:20%;
+  width: 50%;
+  background: url("/praise_xi_shanbei/Public/images/warning.png")center no-repeat;
+  background-size: 100% 100%;
+  z-index: 10000;
+  display: none;
+}
+#backPage .warning .position{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#backPage .warning .position .close{
+  font-size: 16px;
+  color: #fff1b1;
+  padding: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background: #f39c12;
+  left: -5%;
+  top: -5%;
+}
 #backPage .returnBtn {
   background: url("/praise_xi_shanbei/Public/images/return.png") center center no-repeat;
   background-size: 100% 100%;
@@ -207,12 +231,14 @@
   color: #ff8f00;
 }
 #gamePage .littleTitle{
+  width: 100%;
   text-align: center;
   font-size: 17px !important;
-  padding: 5px 13px;
+  padding: 5px 0px;
+  display: none;
 }
 #gamePage .questionContainer .conversation div {
-  font-size: 17px !important;
+  font-size: 16px !important;
   padding: 13px;
 }
 #gamePage .nextBtn {
