@@ -65,11 +65,11 @@ $(function(){
                     aList.eq(i+1).html(data.data[i].nickname);
                     aAvatar.eq(i).attr('src',data.data[i].imgurl);
                     if(i){
-                        aRank.eq(i+1).html(i+3);
+                        aRank.eq(i).html(i+3);
                     }
                 }else{
                     if(i){
-                        aRank.eq(i+1).html(i+3);
+                        aRank.eq(i).html(i+3);
                     }
                     aList.eq(i+1).html("无");
                 }
