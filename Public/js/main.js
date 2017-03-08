@@ -1,13 +1,11 @@
 /**
  * Created by hughes on 2017/3/4.
  */
-$(document).on("pageshow","#beginPage",function(){
-    $('.beginImg').addClass('gogogo');
-    $(document).off("pageshow","#beginPage");
-    setTimeout(function(){
-        $('.beginImg').removeClass('gogogo');
+$(document).on("pageshow","#backPage",function(){
         $('.beginImg').removeClass('pulse');
-    },3000);
+});
+$(document).on("pageshow","#listPage",function(){
+    $('.beginImg').removeClass('pulse');
 });
 var question_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/questions";
 var rank_link = "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Home/Index/moreRank";

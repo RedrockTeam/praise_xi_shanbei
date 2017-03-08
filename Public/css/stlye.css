@@ -35,10 +35,6 @@
   box-shadow: 0 0 4px 4px #ffe28c;
   color: #e86209;
 }
-.gogogo{
-  animation-iteration-count:2;
-  -webkit-animation-iteration-count:2;
-}
 .btn {
   width: 45%;
   margin: 0 auto;
