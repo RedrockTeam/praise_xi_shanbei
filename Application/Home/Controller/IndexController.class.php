@@ -95,7 +95,7 @@ class IndexController extends BaseController {
         $map['score'] = array('GT', $user['score']);
         $rank = $users->where($map)->count();
         $rank += 1;
-        $list = $users->order('score desc')->field('nickname, score')->limit(10)->select();
+        $list = $users->order('score desc')->field('nickname, imgurl, score')->limit(10)->select();
         $this->ajaxReturn(array(
             'status' => 200,
             'data'   => array(
@@ -121,7 +121,7 @@ class IndexController extends BaseController {
         $offset = $from - 1 >= 0 ? $from - 1:0;
         $limit = $to - $offset;
         $users = M('users');
-        $list = $users->order('score desc')->field('nickname, score')->limit($offset, $limit)->select();
+        $list = $users->order('score desc')->field('nickname, imgurl, score')->limit($offset, $limit)->select();
         $this->ajaxReturn(array(
             'status' => 200,
             'data'  => $list
