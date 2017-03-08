@@ -120,8 +120,8 @@ $(function () {
                     $.mobile.changePage('#overPage',{
                         transition:'flow'
                     });
-                    shareTitle = '我正在参加“学讲话 赞习大大”打卡特训，打卡第'+data.data.days+'天，排第'+data.data.rank+'名，明天继续'
-                    initShare(shareTitle, shareURL, shareImg);
+                    shareDesc = '我正在参加“学讲话 赞习大大”打卡特训，打卡第'+data.data.days+'天，排第'+data.data.rank+'名，明天继续！'
+                    initShare(shareTitle, shareDesc, shareURL, shareImg);
                 }else {
                     alert(data.error);
                 }
