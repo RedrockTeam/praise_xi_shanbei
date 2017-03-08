@@ -69,7 +69,7 @@ $(function(){
                     }
                 }else{
                     if(i){
-                        aRank.eq(i).html(i+3);
+                        aRank.eq(i).html(data.data[i].rank);
                     }
                     aList.eq(i+1).html("无");
                 }
