@@ -20,8 +20,36 @@ $(function () {
         });
     });
     $('.listBtn').on('click',function(){
-        $.mobile.changePage('#listPage',{
-            transition:'flow'
+        $.mobile.loading('show');
+        var _data = {};
+        _data.from = 1;
+        _data.to = 50;
+        $.post(rank_link,_data,function(data){
+            $.mobile.loading('hide');
+            if(data.status == 200){
+                var aList = $('.aName');
+                var aRank = $('.aRank');
+                var aAvatar = $('.avatarBox');
+                for (var i = 0 ; i < 50 ; i++){
+                    if(data.data[i]){
+                        aList.eq(i+1).html(data.data[i].nickname);
+                        aAvatar.eq(i).attr('src',data.data[i].imgurl);
+                        if(i){
+                            aRank.eq(i).html(i+3);
+                        }
+                    }else{
+                        if(i){
+                            aRank.eq(i).html(i+3);
+                        }
+                        aList.eq(i+1).html("无");
+                    }
+                }
+                $.mobile.changePage('#listPage',{
+                    transition:'flow'
+                });
+            }else {
+                alert(data.status);
+            }
         });
     });
     $('.returnBtn').on('click',function(){
