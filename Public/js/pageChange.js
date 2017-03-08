@@ -80,6 +80,7 @@ $(function () {
             }
         },1000);
         $.mobile.loading('show');
+        $('.ui-page').css('min-height',$(window).height()+' !important');
         $.post(question_link,1,function(data){
             if(data.status == 200){
                 console.log(data.data.question.bigtitle);
@@ -133,7 +134,6 @@ $(function () {
             return false;
         }
         nextFlag = 0;
-        $('.ui-page').css('min-height',$(window).height()+' !important');
         if(current == 5){
             $.mobile.loading('show');
             $.post(link_rank,1,function(data){
