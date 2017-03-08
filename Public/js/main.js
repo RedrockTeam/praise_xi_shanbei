@@ -56,14 +56,21 @@ $(function(){
     $.post(rank_link,_data,function(data){
         $.mobile.loading('hide');
         if(data.status == 200){
+            console.log(data.data);
             var aList = $('.aName');
             var aRank = $('.aRank');
+            var aAvatar = $('.avatarBox');
             for (var i = 0 ; i < 50 ; i++){
                 if(data.data[i]){
                     aList.eq(i+1).html(data.data[i].nickname);
-                    aRank.eq(i+1).html(i+1);
+                    aAvatar.eq(i).attr('src',data.data[i].imgurl);
+                    if(i){
+                        aRank.eq(i+1).html(i+3);
+                    }
                 }else{
-                    aRank.eq(i+1).html(i+1);
+                    if(i){
+                        aRank.eq(i+1).html(i+3);
+                    }
                     aList.eq(i+1).html("无");
                 }
             }
