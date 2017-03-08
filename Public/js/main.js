@@ -48,6 +48,7 @@ $(function(){
             $('.days').html(data.data.days);
             $('.groups').html(data.data.groups);
             $('.rankNow').html(data.data.rank);
+            $('.avatar').attr('src',data.data.avatar);
         }else {
             alert(data.error);
         }
