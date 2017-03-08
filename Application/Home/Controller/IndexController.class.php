@@ -96,6 +96,14 @@ class IndexController extends BaseController {
         $rank = $users->where($map)->count();
         $rank += 1;
         $list = $users->order('score desc')->field('nickname, imgurl, score')->limit(10)->select();
+        if ($rank <= 50) {
+            $real = $users->order('score desc')->field('nickname, imgurl, score')->limit(50)->select();
+        }
+        foreach ($real as $key => $value) {
+            if ($value['nickname'] == $user['nickname']) {
+                $rank = $key+1;
+            }
+        }
         $this->ajaxReturn(array(
             'status' => 200,
             'data'   => array(
