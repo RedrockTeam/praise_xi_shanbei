@@ -17,7 +17,6 @@ $(function(){
     $('.cardBack').css({'left':$(window).width()*0.135,'height':$(window).width()*0.81});
     $('.ok').css('margin-top',$(window).width()*0.89);
     $('.btnC').css('top',$(window).width()*1.1);
-    $('.ui-page').css('min-height',$(window).height()+' !important');
     $('.warning').css({'left':$(window).width()*0.15,'height':$(window).width()*0.7});
     $('.avatar').css('height',$(window).width()*0.208);
     $('.avatarBox').css('height',$(window).width()*0.056);

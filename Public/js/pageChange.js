@@ -80,7 +80,6 @@ $(function () {
             }
         },1000);
         $.mobile.loading('show');
-        $('.ui-page').css('min-height',$(window).height()+' !important');
         $.post(question_link,1,function(data){
             if(data.status == 200){
                 console.log(data.data.question.bigtitle);
@@ -112,11 +111,13 @@ $(function () {
                     $('.provenance').html(data.data.question.extra0);
                 }
                 current = data.data.current;
+                var Cheight = $(window).height();
                 setTimeout(function(){
                     $.mobile.loading('hide');
                     $.mobile.changePage('#gamePage',{
                         transition:'flow'
                     });
+                    $('.ui-page').css('min-height',Cheight+' !important');
                 },200);
             }else if (data.status == 403){
                 $.mobile.loading('hide');
