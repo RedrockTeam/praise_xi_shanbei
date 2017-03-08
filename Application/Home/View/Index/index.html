@@ -447,9 +447,11 @@
                     'hideAllNonBaseMenuItem'
                 ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
+            var shareTitle = '学讲话赞习大大';
+            var shareURL = "{$signature['url']}";
             wx.ready(function(){
                 wx.onMenuShareTimeline({
-                    title: '学讲话赞习大大', // 分享标题
+                    title: shareTitle, // 分享标题
                     link: "{$signature['url']}",
                     imgUrl: "https://redrock.cqupt.edu.cn/praise_xi_shanbei/Public/images/share.png",
                     success: function () {
