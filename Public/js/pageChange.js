@@ -90,6 +90,7 @@ $(function () {
                     });
                 },200);
             }else if (data.status == 403){
+                $.mobile.loading('hide');
                 $('.warning').css('display','block');
                 $('.mask').css('display','block');
             }else{
