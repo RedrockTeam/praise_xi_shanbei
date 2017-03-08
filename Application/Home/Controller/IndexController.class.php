@@ -96,16 +96,12 @@ class IndexController extends BaseController {
         $rank = $users->where($map)->count();
         $rank += 1;
         $list = $users->order('score desc')->field('nickname, imgurl, score')->limit(10)->select();
-        $tmpRank = 0;
-        $tmpScore = 1000000;
-        foreach ($list as &$v) {
-            if ($v['score'] < $tmpScore) {
-                $tmpRank += 1;
-                $v['rank'] = $tmpRank;
-                $tmpScore = $v['score'];
-            }
-            if ($v['score'] == $tmpScore) {
-                $v['rank'] = $tmpRank;
+        if ($rank <= 50) {
+            $real = $users->order('score desc')->field('nickname, imgurl, score')->limit(50)->select();
+        }
+        foreach ($real as $key => $value) {
+            if ($value['nickname'] == $user['nickname']) {
+                $rank = $key+1;
             }
         }
         $this->ajaxReturn(array(
@@ -134,18 +130,6 @@ class IndexController extends BaseController {
         $limit = $to - $offset;
         $users = M('users');
         $list = $users->order('score desc')->field('nickname, imgurl, score')->limit($offset, $limit)->select();
-        $tmpRank = 0;
-        $tmpScore = 1000000;
-        foreach ($list as &$v) {
-            if ($v['score'] < $tmpScore) {
-                $tmpRank += 1;
-                $v['rank'] = $tmpRank;
-                $tmpScore = $v['score'];
-            }
-            if ($v['score'] == $tmpScore) {
-                $v['rank'] = $tmpRank;
-            }
-        }
         $this->ajaxReturn(array(
             'status' => 200,
             'data'  => $list

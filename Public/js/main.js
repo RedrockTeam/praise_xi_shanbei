@@ -49,6 +49,8 @@ $(function(){
             $('.groups').html(data.data.groups);
             $('.rankNow').html(data.data.rank);
             $('.avatar').attr('src',data.data.avatar);
+            shareTitle = '我正在参加 “学讲话 赞习大大” 打卡特训，打卡第'+data.data.days+'天，排第'+data.data.rank+'名，明天继续'
+            initShare(shareTitle, shareURL, shareImg);
         }else {
             alert(data.error);
         }
@@ -56,6 +58,7 @@ $(function(){
     $.post(rank_link,_data,function(data){
         $.mobile.loading('hide');
         if(data.status == 200){
+            console.log(data.data);
             var aList = $('.aName');
             var aRank = $('.aRank');
             var aAvatar = $('.avatarBox');
@@ -64,8 +67,7 @@ $(function(){
                     aList.eq(i+1).html(data.data[i].nickname);
                     aAvatar.eq(i).attr('src',data.data[i].imgurl);
                     if(i){
-                        console.log(data.data[i].rank);
-                        aRank.eq(i).html(data.data[i].rank);
+                        aRank.eq(i).html(i+3);
                     }
                 }else{
                     if(i){
