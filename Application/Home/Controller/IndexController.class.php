@@ -6,9 +6,30 @@ class IndexController extends BaseController {
     private $appid = 'wx81a4a4b77ec98ff4';
     private $acess_token = 'gh_68f0a1ffc303';
     public function index(){
+        $userCurrent = M('user_current_question');
+        $openid = session('openid');
+        $currentData = $userCurrent->where(array('openid' => $openid))->find();
+        $share = '快来参加 “学讲话 赞习大大” 打卡特训，天天打卡，做合格共青团员';
+        if ($currentData['date'] == date('Y-m-d', time()) && $currentData['today_group_count'] != 0){
+            $users = M('users');
+            $user = $users->where(array('openid' => $openid))->find();
+            $map['score'] = array('GT', $user['score']);
+            $rank = $users->where($map)->count();
+            $rank += 1;
+            if ($rank <= 50) {
+                $real = $users->order('score desc')->field('nickname, imgurl, score')->limit(50)->select();
+                foreach ($real as $key => $value) {
+                    if ($value['nickname'] == $user['nickname']) {
+                        $rank = $key+1;
+                    }
+                }
+            }
+            $share = '我正在参加 “学讲话 赞习大大” 打卡特训，打卡第'.$user['days'].'天，排第'+$rank+'名，明天继续！你也加入吧';
+        }
         $signature = $this->JSSDKSignature();
         $this->assign('signature', $signature);
         $this->assign('appid', $this->appid);
+        $this->assign('share', $share);
         $this->display();
     }
 
