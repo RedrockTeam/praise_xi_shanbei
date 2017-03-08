@@ -449,6 +449,7 @@
                 ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
             function initShare(shareTitle, shareDesc, shareURL, shareImg) {
+                alert('test');
                 wx.ready(function(){
                     wx.onMenuShareTimeline({
                         title: shareDesc, // 分享标题
@@ -501,7 +502,7 @@
                     });
                 });
             }
-            window.onload=initShare(shareTitle, shareDesc, shareURL, shareImg);
+            initShare(shareTitle, shareDesc, shareURL, shareImg);
         </script>
 
     </body>
