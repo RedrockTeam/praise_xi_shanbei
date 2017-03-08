@@ -102,6 +102,7 @@ class IndexController extends BaseController {
                 'list' => $list,
                 'rank' => $rank,
                 'nickname' => $user['nickname'],
+                'avatar' => $user['imgurl'],
                 'days' => $user['days'],
                 'groups' => $user['count']
             )
