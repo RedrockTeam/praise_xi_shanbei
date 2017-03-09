@@ -49,7 +49,7 @@ class IndexController extends BaseController {
         }
 
         //检查学习题目上限
-        if ($currentData['today_group_count'] == 3) {
+        if ($currentData['today_group_count'] == 300) {
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'  => '每天最多只能学三组题'
@@ -69,7 +69,7 @@ class IndexController extends BaseController {
         }
 
         //请求新题目时检查时间是否满足
-        if (time() - $currentData['time'] < 15 && $isNew) {
+        if (time() - $currentData['time'] < 1 && $isNew) {
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'   => '学习时间未满'
