@@ -2,7 +2,7 @@
  * Created by hughes on 2017/3/4.
  */
 timer = null;
-timeNum = 3;
+timeNum = 15;
 nextFlag = 0;
 current = 1;
 $(function () {
@@ -158,7 +158,7 @@ $(function () {
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
         $('.nextBtn').html('<span class="time">15</span>s');
         $('.nextBtn').css('padding','3% 0');
-        timeNum = 3;
+        timeNum = 15;
         timer = setInterval(function(){
             timeNum--;
             $('.time').html(timeNum);
