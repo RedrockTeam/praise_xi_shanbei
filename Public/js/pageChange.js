@@ -2,7 +2,7 @@
  * Created by hughes on 2017/3/4.
  */
 timer = null;
-timeNum = 15;
+timeNum = 3;
 nextFlag = 0;
 current = 1;
 $(function () {
@@ -80,10 +80,8 @@ $(function () {
             }
         },1000);
         $.mobile.loading('show');
-        $('.ui-page').css('min-height',$(window).height()+' !important');
         $.post(question_link,1,function(data){
             if(data.status == 200){
-                console.log(data.data.question.bigtitle);
                 if(data.data.question.bigtitle){
                     $('.Qtitle').html(data.data.question.bigtitle);
                     $('.littleTitle').css('display',"inline-block");
@@ -117,7 +115,6 @@ $(function () {
                     $.mobile.changePage('#gamePage',{
                         transition:'flow'
                     });
-                    $('#gamePage').css('min-height',$(window).height()+' !important');
                 },200);
             }else if (data.status == 403){
                 $.mobile.loading('hide');
@@ -161,7 +158,7 @@ $(function () {
         $('.nextBtn').css("background-image","url(/praise_xi_shanbei/Public/images/blankBtn.png)");
         $('.nextBtn').html('<span class="time">15</span>s');
         $('.nextBtn').css('padding','3% 0');
-        timeNum = 15;
+        timeNum = 3;
         timer = setInterval(function(){
             timeNum--;
             $('.time').html(timeNum);
@@ -178,17 +175,18 @@ $(function () {
         $.mobile.loading('show');
         $.post(question_link,_data,function(data){
             $.mobile.loading('hide');
-            console.log(data.data.question.bigtitle);
-            if(data.data.question.bigtitle){
-                $('.Qtitle').html(data.data.question.bigtitle);
-                $('.littleTitle').css('display',"inline-block");
-                $('.littleTitle').html(data.data.question.title);
-            }
-            else {
-                $('.littleTitle').css('display',"none");
-                $('.Qtitle').html(data.data.question.title);
-            }
             if(data.status == 200){
+                $('#gamePage').attr('style'," ");
+                $('#gamePage').css('min-height',$(window).height());
+                if(data.data.question.bigtitle){
+                    $('.Qtitle').html(data.data.question.bigtitle);
+                    $('.littleTitle').css('display',"inline-block");
+                    $('.littleTitle').html(data.data.question.title);
+                }
+                else {
+                    $('.littleTitle').css('display',"none");
+                    $('.Qtitle').html(data.data.question.title);
+                }
                 if(data.data.question.type == 'gushidiangu'){
                     $('.allusion').css('display','block');
                     $('.conversation').css('display','none');
@@ -209,7 +207,7 @@ $(function () {
                 }
                 current = data.data.current;
             }else{
-                alert(data.info);
+                console.log(data.info);
             }
         });
     });
