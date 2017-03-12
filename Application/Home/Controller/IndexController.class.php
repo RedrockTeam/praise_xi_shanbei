@@ -9,7 +9,7 @@ class IndexController extends BaseController {
         $userCurrent = M('user_current_question');
         $openid = session('openid');
         $currentData = $userCurrent->where(array('openid' => $openid))->find();
-        $share = '快来参加 “团团打卡 学讲话” 打卡特训，天天打卡，做合格共青团员';
+        $share = '快来参加 “团团打卡 学讲话” 特训，天天打卡，做合格共青团员';
         if ($currentData['date'] == date('Y-m-d', time()) && $currentData['today_group_count'] != 0){
             $users = M('users');
             $user = $users->where(array('openid' => $openid))->find();
@@ -24,7 +24,7 @@ class IndexController extends BaseController {
                     }
                 }
             }
-            $share = '我正在参加 “团团打卡 学讲话” 打卡特训，打卡第'.$user['days'].'天，排第'.$rank.'名，明天继续！你也加入吧';
+            $share = '我正在参加 “团团打卡 学讲话” 特训，打卡第'.$user['days'].'天，排第'.$rank.'名，明天继续！你也加入吧';
         }
         $signature = $this->JSSDKSignature();
         $this->assign('signature', $signature);
