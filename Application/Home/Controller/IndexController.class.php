@@ -49,7 +49,7 @@ class IndexController extends BaseController {
         }
 
         //检查学习题目上限
-        if ($currentData['today_group_count'] == 3) {
+        if ($currentData['today_group_count'] == 2) {
             $this->ajaxReturn(array(
                 'status' => 403,
                 'error'  => '每天最多只能学三组题'
@@ -94,7 +94,7 @@ class IndexController extends BaseController {
                 $user['days'] += 1;
             }
             $user['count'] += 1;
-            $user['score'] = $user['days']*70 + $user['count']*10;
+            $user['score'] = $user['days']*70 + $user['count']*15;
             $users->where(array('openid' => $openid))->save($user);
         }
         $currentData['time'] = time();
