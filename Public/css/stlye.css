@@ -39,9 +39,9 @@
   margin: 0 auto;
 }
 #beginPage .beginImg {
-  width: 90%;
+  width: 83%;
   display: block;
-  margin: 3% auto;
+  margin: 4% auto;
 }
 #beginPage #btnContainer {
   width: 100%;
@@ -49,6 +49,13 @@
   position: absolute;
   z-index: 100;
   top:0;
+}
+.logo{
+  position: absolute;
+  left:3%;
+  top:2.2%;
+  width: 35%;
+  z-index: 100;
 }
 #beginPage #btnContainer div {
   width: 45%;
@@ -203,7 +210,7 @@
   position: relative;
 }
 #gamePage .questionContainer .flag {
-  width: 22%;
+  width: 48%;
   position: absolute;
   left: -10px;
   top: -10px;
@@ -276,6 +283,11 @@
   width: 73%;
   display: block;
   margin: 3% auto;
+  margin-top: 10%;
+}
+#overPage .secondState .logo{
+  top:0.7%;
+  left: 2.6%;
 }
 #overPage .secondState .cardBack {
   width: 73%;

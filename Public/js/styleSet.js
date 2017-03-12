@@ -16,7 +16,7 @@ $(function(){
     $('.return').css('left',$(window).width()*0.35);
     $('.cardBack').css({'left':$(window).width()*0.135,'height':$(window).width()*0.81});
     $('.ok').css('margin-top',$(window).width()*0.89);
-    $('.btnC').css('top',$(window).width()*1.1);
+    $('.btnC').css('top',$(window).width()*1.13);
     $('.warning').css({'left':$(window).width()*0.15,'height':$(window).width()*0.7});
     $('.avatar').css('height',$(window).width()*0.208);
     $('.avatarBox').css('height',$(window).width()*0.056);
