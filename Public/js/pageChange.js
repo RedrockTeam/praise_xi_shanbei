@@ -146,7 +146,7 @@ $(function () {
                     $.mobile.changePage('#overPage',{
                         transition:'flow'
                     });
-                    shareDesc = '我正在参加 “学讲话 赞习大大” 打卡特训，打卡第'+data.data.days+'天，排第'+data.data.rank+'名，明天继续！你也加入吧'
+                    shareDesc = '我正在参加 “团团打卡 学讲话” 打卡特训，打卡第'+data.data.days+'天，排第'+data.data.rank+'名，明天继续！你也加入吧'
                     initShare(shareTitle, shareDesc, shareURL, shareImg);
                 }else {
                     alert(data.error);
