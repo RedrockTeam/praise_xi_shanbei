@@ -80,7 +80,15 @@ class IndexController extends BaseController {
         if ($currentData['today_learn_id']) {
             $map['id'] = array('NOT IN', $currentData['today_learn_id']);
         }
-        $question = $questions->where($map)->order('rand()')->find();
+        if ($currentData['current'] == 0) {
+            $map['special_type'] = '1';
+            $question = $questions->where($map)->order('rand()')->find();
+        } elseif ($currentData['current'] == 1) {
+            $map['special_type'] = '2';
+            $question = $questions->where($map)->order('rand()')->find();
+        } else {
+            $question = $questions->where($map)->order('rand()')->find();
+        }
         array_push($currentData['today_learn_id'], $question['id']);
         $currentData['today_learn_id'] = json_encode($currentData['today_learn_id']);
         $currentData['current'] += 1;
