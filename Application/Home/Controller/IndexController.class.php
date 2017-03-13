@@ -81,10 +81,10 @@ class IndexController extends BaseController {
             $map['id'] = array('NOT IN', $currentData['today_learn_id']);
         }
         if ($currentData['current'] == 0) {
-            $map['special_type'] = '1';
+            $map['special_type'] = '2';
             $question = $questions->where($map)->order('rand()')->find();
         } elseif ($currentData['current'] == 1) {
-            $map['special_type'] = '2';
+            $map['special_type'] = '1';
             $question = $questions->where($map)->order('rand()')->find();
         } else {
             $question = $questions->where($map)->order('rand()')->find();
