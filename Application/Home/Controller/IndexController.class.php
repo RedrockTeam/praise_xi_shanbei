@@ -49,10 +49,10 @@ class IndexController extends BaseController {
         }
 
         //检查学习题目上限
-        if ($currentData['today_group_count'] == 2) {
+        if ($currentData['today_group_count'] == 5) {
             $this->ajaxReturn(array(
                 'status' => 403,
-                'error'  => '每天最多只能学三组题'
+                'error'  => '每天最多只能学五组题'
             ));
         }
 
@@ -124,6 +124,9 @@ class IndexController extends BaseController {
             if ($value['nickname'] == $user['nickname']) {
                 $rank = $key+1;
             }
+        }
+        if ($user['days'] == 0) {
+            $rank = '-';
         }
         $this->ajaxReturn(array(
             'status' => 200,
