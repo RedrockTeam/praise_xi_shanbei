@@ -4,6 +4,10 @@ use Think\Controller;
 class BaseController extends Controller {
     public function _initialize(){
         header('Access-Control-Allow-Origin: *');
+        $check = session('check');
+        if (!$check) {
+            session(null);
+        }
         $openid = session('openid');//'ouRCyjhdsj8RQofIOPHc7nX9hA98';//
         $nickname = session('nickname');
         if (!$openid || !$nickname) {
