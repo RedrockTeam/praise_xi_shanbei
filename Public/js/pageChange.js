@@ -82,6 +82,7 @@ $(function () {
         $.mobile.loading('show');
         $.post(question_link,1,function(data){
             if(data.status == 200){
+                $('.questionContainer').css('min-height',$(window).height()*0.55);
                 if(data.data.question.bigtitle){
                     $('.Qtitle').html(data.data.question.bigtitle);
                     $('.littleTitle').css('display',"inline-block");
