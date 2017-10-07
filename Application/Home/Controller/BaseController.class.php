@@ -4,12 +4,13 @@ use Think\Controller;
 class BaseController extends Controller {
     public function _initialize(){
         header('Access-Control-Allow-Origin: *');
-        $check = session('check');
-        if (!$check) {
-            session(null);
+        if (APP_DEBUG) {
+            $openid = 'ouRCyjhdsj8RQofIOPHc7nX9hA98';//session('openid');//
+            $nickname = '知识混子周政';// session('nickname'); //
+        } else {
+            $openid = session('openid');//
+            $nickname = session('nickname'); //
         }
-        $openid = session('openid');//'ouRCyjhdsj8RQofIOPHc7nX9hA98';//
-        $nickname = session('nickname');
         if (!$openid || !$nickname) {
             $openid = I('get.openid');
             $nickname = urldecode(I('get.nickname'));//'知识混子周政';//
