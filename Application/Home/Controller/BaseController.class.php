@@ -21,7 +21,6 @@ class BaseController extends Controller {
         }
         session('openid', $openid);
         session('nickname', $nickname);
-        session('check', 1);
         $users = M('users');
         $num = $users->where(array('openid' => $openid))->count();
         if ($num == 0) {

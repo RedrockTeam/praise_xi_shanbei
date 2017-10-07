@@ -26,7 +26,7 @@ class IndexController extends BaseController {
             }
             $share = '我正在参加 “团团打卡 学讲话” 特训，打卡第'.$user['days'].'天，排第'.$rank.'名，明天继续！你也加入吧！';
         }
-        $signature = $this->JSSDKSignature();
+//        $signature = $this->JSSDKSignature();
         $this->assign('signature', $signature);
         $this->assign('appid', $this->appid);
         $this->assign('share', $share);
